@@ -15,7 +15,9 @@ export class DataService {
     return `https://api.github.com/search/users?q=${ username }+in:login+in:fullname+in:email+type:user`;
   }
 
-  getUsers( username: string ): Observable<any> {
-    return this.http.get<any>( DataService._constructUrl( username ) );
+  init(): void {}
+
+  getUsers( userName: string ): Observable<any> {
+    return this.http.get<any>( DataService._constructUrl( userName ) );
   }
 }
