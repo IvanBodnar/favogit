@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {UserModule} from './user.module';
 import {SearchComponent} from './components/search/search.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import {SearchComponent} from './components/search/search.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserModule
+    UserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
