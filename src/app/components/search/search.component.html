@@ -3,6 +3,7 @@
   <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <div class="card-content">
         <input
+          formControlName="search"
           id="search-input"
           class="input is-primary"
           placeholder="Ingrese Usuario"
