@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {SearchComponent} from './components/search/search.component';
+import {UserListComponent} from './components/user-list/user-list.component';
 
 const routes: Routes = [
-  { path: '', component: SearchComponent }
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: 'users', component: UserListComponent }
 ];
 
 @NgModule({
