@@ -31,7 +31,12 @@ export class UserService {
         map(
           response => {
             return response.items.map(
-              item => new UserListModel( item.url, item.html_url, item.login )
+              item => new UserListModel(
+                item.url,
+                item.html_url,
+                item.login,
+                item.text_matches
+              )
             );
           }
         )

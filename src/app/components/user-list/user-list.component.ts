@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {UserService} from '../../services/user.service';
-import {UsersResponseModel} from '../../models/users-response.model';
-import {map} from 'rxjs/operators';
+import UserListModel from '../../models/user-list.model';
 
 @Component({
   selector: 'app-user-list',
@@ -19,9 +18,9 @@ export class UserListComponent implements OnInit {
   ngOnInit() {
     this.userService.users$
       .subscribe(
-        ( response: UsersResponseModel ) => {
-          console.log(this.userService.usersCount);
-          this.users = response;
+        ( users: UserListModel[] ) => {
+          console.log(users);
+          this.users = users;
         }
       );
   }

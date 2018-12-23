@@ -1,5 +1,9 @@
 
-<article *ngFor="let user of users" class="message is-warning">
+<article
+  *ngFor="let user of users"
+  (click)="onDetail()"
+  class="message is-warning"
+>
   <div class="message-header">
     <p>{{ user.login }}</p>
     <button class="delete" aria-label="delete"></button>
