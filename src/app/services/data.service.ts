@@ -20,11 +20,16 @@ export class DataService {
   init(): void {}
 
   getUsers( userName: string ): Observable<UsersResponseModel> {
-    return this.http.get<any>( DataService._constructUrl( userName ) )
+    return this.http.get<any>( DataService._constructUrl( userName ),
+      { headers: { 'Accept': 'application/vnd.github.v3.text-match+json' } }
+      )
       .pipe(
         map(
           response => {
-            return { totalCount: response.total_count, items: response.items } as UsersResponseModel;
+            return {
+              totalCount: response.total_count,
+              items: response.items
+            } as UsersResponseModel;
           }
         )
       );
