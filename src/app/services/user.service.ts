@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {DataService} from './data.service';
-import {Subject} from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 
 import UserListModel from '../models/user-list.model';
@@ -9,9 +9,11 @@ import UserListModel from '../models/user-list.model';
   providedIn: 'root'
 })
 export class UserService {
-  private _usersSubject = new Subject();
-  usersCount: number;
+  private _usersSubject = new BehaviorSubject(null);
   users$ = this._usersSubject.asObservable();
+
+  usersCount: number;
+  currentUser: UserListModel;
 
   constructor(
     private dataService: DataService
