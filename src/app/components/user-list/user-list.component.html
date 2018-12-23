@@ -1,7 +1,7 @@
 
 <article
   *ngFor="let user of users"
-  (click)="onDetail()"
+  (click)="onDetail( user.apiUrl )"
   class="message is-warning"
 >
   <div class="message-header">
