@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 import {UserService} from '../../services/user.service';
 import UserListModel from '../../models/user-list.model';
@@ -12,7 +13,8 @@ export class UserListComponent implements OnInit {
   users: any;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -23,6 +25,10 @@ export class UserListComponent implements OnInit {
           this.users = users;
         }
       );
+  }
+
+  onDetail(): void {
+    this.router.navigate( ['/user-detail'] );
   }
 
 }
