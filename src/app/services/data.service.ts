@@ -46,4 +46,8 @@ export class DataService {
         )
       );
   }
+
+  getUserDetail( userUrl: string ): Observable<any> {
+    return this.http.get<any>( userUrl, { headers: this.headers } );
+  }
 }
