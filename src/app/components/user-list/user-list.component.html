@@ -1,3 +1,10 @@
-<p>
-  user-list works!
-</p>
+
+<article *ngFor="let user of users" class="message is-warning">
+  <div class="message-header">
+    <p>{{ user.login }}</p>
+    <button class="delete" aria-label="delete"></button>
+  </div>
+  <div class="message-body">
+    {{ user.htmlUrl }}
+  </div>
+</article>
