@@ -23,10 +23,15 @@ export class SearchComponent implements OnInit {
 
   }
 
+  private _clearFields(): void {
+    this.searchForm.get('search').setValue(null);
+  }
+
   onSubmit() {
-    this.userService.fetchUsers('tom')
+    this.userService.fetchUsers(this.searchForm.value.search)
       .subscribe(
         users => console.log(users)
-      )
+      );
+    this._clearFields();
   }
 }
