@@ -27,7 +27,10 @@ export class UserListComponent implements OnInit {
       );
   }
 
-  onDetail(): void {
+  onDetail( userUrl: string ): void {
+    this.userService.currentUserUrl = userUrl;
+    this.userService.fetchUserDetail( userUrl );
+    console.log(userUrl)
     this.router.navigate( ['/user-detail'] );
   }
 
