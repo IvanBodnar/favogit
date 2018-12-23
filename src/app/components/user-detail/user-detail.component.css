@@ -1,0 +1,21 @@
+
+article {
+  margin: 30px;
+}
+
+.message-body {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+.image-area {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
