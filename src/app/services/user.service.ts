@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {DataService} from './data.service';
-import {Subject} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 
 import UserListModel from '../models/user-list.model';
@@ -9,9 +9,14 @@ import UserListModel from '../models/user-list.model';
   providedIn: 'root'
 })
 export class UserService {
-  private _usersSubject = new Subject();
-  usersCount: number;
+  private _usersSubject = new BehaviorSubject(null);
   users$ = this._usersSubject.asObservable();
+
+  private _userSubject = new BehaviorSubject(null);
+  currentUser$ = this._userSubject.asObservable();
+
+  usersCount: number;
+  currentUserUrl: string;
 
   constructor(
     private dataService: DataService
@@ -31,7 +36,13 @@ export class UserService {
         map(
           response => {
             return response.items.map(
-              item => new UserListModel( item.url, item.html_url, item.login )
+              item => new UserListModel(
+                item.id,
+                item.url,
+                item.html_url,
+                item.login,
+                item.text_matches
+              )
             );
           }
         )
@@ -40,6 +51,16 @@ export class UserService {
         users => {
           this._usersSubject.next(users);
         }
+      );
+  }
+
+  fetchUserDetail( userUrl: string ): void {
+    this.dataService.getUserDetail( userUrl )
+      .subscribe(
+        userDetail => {
+          this._userSubject.next( userDetail );
+        },
+        error => console.log(error)
       );
   }
 }

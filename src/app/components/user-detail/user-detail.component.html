@@ -1,3 +1,7 @@
 <p>
-  user-detail works!
+
+  <button (click)="onVolver()">Volver</button>
 </p>
+<div *ngIf="currentUser">
+  {{ currentUser.followers }}
+</div>
