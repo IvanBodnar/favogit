@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import {UserService} from '../../services/user.service';
+import {UsersResponseModel} from '../../models/users-response.model';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-list',
@@ -8,7 +10,7 @@ import {UserService} from '../../services/user.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  users: Object[];
+  users: any;
 
   constructor(
     private userService: UserService
@@ -17,8 +19,11 @@ export class UserListComponent implements OnInit {
   ngOnInit() {
     this.userService.users$
       .subscribe(
-        users => console.log(users)
-      )
+        ( response: UsersResponseModel ) => {
+          console.log(this.userService.usersCount);
+          this.users = response;
+        }
+      );
   }
 
 }
