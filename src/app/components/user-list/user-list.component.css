@@ -7,6 +7,10 @@
   grid-template-rows: repeat(3, 1fr);
 }
 
+article {
+  cursor: pointer;
+}
+
 @media (max-width: 500px) {
   .user-list-container {
     margin: 30px;
