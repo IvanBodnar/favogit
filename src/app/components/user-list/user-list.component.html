@@ -1,4 +1,7 @@
 
+<button (click)="onSort( 'asc' )">Ordenar ASC</button>
+<button (click)="onSort( 'desc' )">Ordenar DESC</button>
+
 <div class="user-list-container">
   <article
     *ngFor="let user of users"

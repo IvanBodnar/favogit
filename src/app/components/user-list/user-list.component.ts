@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import _ from 'lodash';
 
 import {UserService} from '../../services/user.service';
 import UserListModel from '../../models/user-list.model';
+import {Order} from '../../models/order.enum';
 
 @Component({
   selector: 'app-user-list',
@@ -10,7 +12,7 @@ import UserListModel from '../../models/user-list.model';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  users: any;
+  users: UserListModel[];
 
   constructor(
     private userService: UserService,
@@ -29,7 +31,11 @@ export class UserListComponent implements OnInit {
   onDetail( userUrl: string ): void {
     this.userService.currentUserUrl = userUrl;
     this.userService.fetchUserDetail( userUrl );
-    this.router.navigate( ['/user-detail'] );
+    this.router.navigate( [ '/user-detail' ] );
+  }
+
+  onSort( order: Order ): void {
+    this.users = _.orderBy(this.users, 'login', order);
   }
 
 }
