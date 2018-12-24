@@ -15,7 +15,7 @@
   </article>
 
   <div *ngIf="currentUser" class="favorite-area">
-    <i class="fas fa-star"></i>
+    <i (click)="onFavorite()" class="fas fa-star"></i>
   </div>
 </div>
 

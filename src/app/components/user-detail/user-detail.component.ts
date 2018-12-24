@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import {Router} from '@angular/router';
+
 import {UserService} from '../../services/user.service';
+import {FavoriteService} from '../../services/favorite.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -12,7 +14,8 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private location: Location
+    private favoriteService: FavoriteService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -24,8 +27,12 @@ export class UserDetailComponent implements OnInit {
       );
   }
 
+  onFavorite() {
+    this.router.navigate( [ '/favorites' ] );
+  }
+
   onVolver() {
-    this.location.back();
+
   }
 
 }
