@@ -4,7 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FavoriteService {
-  favorite: any[];
+  favorites = [];
 
   constructor() { }
+
+  addToFavorites( favoriteUser: any ): void {
+    this.favorites.push( favoriteUser );
+  }
 }
