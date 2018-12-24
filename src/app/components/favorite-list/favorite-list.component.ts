@@ -18,4 +18,9 @@ export class FavoriteListComponent implements OnInit {
     this.favoritesArray = this.favoriteService.favorites;
   }
 
+  onDelete( favoriteId: number ): void {
+    this.favoriteService.deleteFavorite( favoriteId );
+    this.favoritesArray = this.favoriteService.favorites;
+  }
+
 }
