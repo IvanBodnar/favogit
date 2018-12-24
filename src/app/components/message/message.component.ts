@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {NavigationStart, Router} from '@angular/router';
 
 @Component({
   selector: 'app-message',
@@ -14,9 +15,20 @@ export class MessageComponent implements OnInit {
   }
   opacity = { 'opacity': 0 };
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    // Esconder el mensaje si se inicia navegación
+    this.router.events
+      .subscribe(
+        event => {
+          if (event instanceof NavigationStart) {
+            this.hideMessage();
+          }
+        }
+      );
   }
 
   showMessage(): void {
