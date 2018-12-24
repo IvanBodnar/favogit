@@ -21,7 +21,6 @@ export class UserListComponent implements OnInit {
     this.userService.users$
       .subscribe(
         ( users: UserListModel[] ) => {
-          console.log(users);
           this.users = users;
         }
       );
@@ -30,7 +29,6 @@ export class UserListComponent implements OnInit {
   onDetail( userUrl: string ): void {
     this.userService.currentUserUrl = userUrl;
     this.userService.fetchUserDetail( userUrl );
-    console.log(userUrl)
     this.router.navigate( ['/user-detail'] );
   }
 

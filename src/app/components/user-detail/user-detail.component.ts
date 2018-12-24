@@ -28,7 +28,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   onFavorite() {
-    this.router.navigate( [ '/favorites' ] );
+    this.favoriteService.addToFavorites( this.currentUser );
   }
 
   onVolver() {
