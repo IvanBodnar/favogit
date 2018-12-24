@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {UserModule} from './user.module';
+import { FavoriteModule } from './favorite.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {UserModule} from './user.module';
 import {SearchComponent} from './components/search/search.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppRoutingModule,
     UserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FavoriteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

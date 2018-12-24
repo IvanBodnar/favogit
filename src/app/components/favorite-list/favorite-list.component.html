@@ -1,0 +1,23 @@
+
+
+<div class="favorite-container">
+  <div></div>
+
+  <article *ngFor="let favorite of favoritesArray" class="message is-warning">
+    <div class="message-header">
+      <p>{{ favorite.login }}</p>
+      <button
+        (click)="onDelete( favorite.id )"
+        class="delete"
+        aria-label="delete"
+      ></button>
+    </div>
+    <div class="message-body">
+      {{ favorite.id }}
+    </div>
+  </article>
+
+  <div></div>
+</div>
+
+

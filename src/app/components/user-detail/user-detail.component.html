@@ -1,13 +1,21 @@
+<div class="detail-container">
+  <div></div>
 
-<article *ngIf="currentUser" class="message is-warning is-large">
-  <div class="message-body">
-    <div>
-      <div>Followers: {{ currentUser.followers }}</div>
-      <div> <a [href]="currentUser.html_url" target="_blank">Perfil GitHub</a> </div>
-      <div>Full Name: {{ currentUser.name }}</div>
+  <article *ngIf="currentUser" class="message is-success is-large">
+    <div class="message-body">
+      <div>
+        <div>Followers: {{ currentUser.followers }}</div>
+        <div> <a [href]="currentUser.html_url" target="_blank">Perfil GitHub</a> </div>
+        <div>Full Name: {{ currentUser.name }}</div>
+      </div>
+      <div class="image-area">
+        <img [src]="currentUser.avatar_url" alt="">
+      </div>
     </div>
-    <div class="image-area">
-      <img [src]="currentUser.avatar_url" alt="">
-    </div>
+  </article>
+
+  <div *ngIf="currentUser" class="favorite-area">
+    <i (click)="onFavorite()" class="fas fa-star"></i>
   </div>
-</article>
+</div>
+
