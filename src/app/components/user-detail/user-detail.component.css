@@ -1,4 +1,15 @@
 
+.detail-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.favorite-area {
+  display: grid;
+  justify-items: start;
+  align-items: center;
+}
+
 article {
   margin: 30px;
 }
@@ -17,6 +28,6 @@ img {
 
 .image-area {
   display: grid;
-  justify-items: center;
+  justify-items: end;
   align-items: center;
 }
