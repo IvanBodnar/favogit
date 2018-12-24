@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {DataService} from './data.service';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject, Observable, of} from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 
 import UserListModel from '../models/user-list.model';
@@ -15,7 +15,7 @@ export class UserService {
   private _userSubject = new BehaviorSubject(null);
   currentUser$ = this._userSubject.asObservable();
 
-  usersCount: number;
+  usersCount$: Observable<number>;
   currentUserUrl: string;
 
   constructor(
@@ -29,7 +29,7 @@ export class UserService {
     this.dataService.getUsers( userName )
       .pipe(
         tap(
-          response => this.usersCount = response.totalCount
+          response => this.usersCount$ = of ( response.totalCount )
         )
       )
       .pipe(

@@ -1,6 +1,7 @@
 
 .main-container {
   height: 100%;
+  width: 100%;
   display: grid;
   grid-gap: 20px;
   grid-template-rows: 15% auto;
@@ -8,7 +9,18 @@
   justify-items: center;
 }
 
+.search-container {
+  width: 100%;
+}
+
 .outlet-container {
   width: 100%;
   align-self: start;
+}
+
+@media (max-width: 500px) {
+  .main-container {
+    grid-template-rows: 35% auto;
+  }
+
 }

@@ -1,7 +1,10 @@
 
-<div class="card">
-  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-    <div class="card-content">
+<div class="main-container">
+  <div></div>
+
+  <div class="card">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+      <div class="card-content">
         <input
           formControlName="search"
           id="search-input"
@@ -13,6 +16,15 @@
           class="button is-primary"
         >Buscar
         </button>
+      </div>
+    </form>
+  </div>
+
+
+    <div>
+      <app-message [messageText]="message"></app-message>
     </div>
-  </form>
+
 </div>
+
+
