@@ -1,0 +1,16 @@
+
+.user-list-container {
+  margin: 30px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+@media (max-width: 500px) {
+  .user-list-container {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+}
