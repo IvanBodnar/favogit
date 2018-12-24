@@ -31,3 +31,15 @@ img {
   justify-items: end;
   align-items: center;
 }
+
+.fas.fa-star {
+  cursor: pointer;
+  color: grey;
+  font-size: 45px;
+  transition: all 0.3s;
+}
+
+.fas.fa-star:hover {
+  color: var(--base-yellow);
+  font-size: 50px;
+}
