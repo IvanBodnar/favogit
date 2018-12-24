@@ -1,11 +1,13 @@
 
-<div class="title-container">
-  <h2 class="title is-2">Favoritos</h2>
+
+<div class="favorite-container">
+  <div>a</div>
+  <article *ngFor="let favorite of favoritesArray" class="message is-warning is-large">
+    <div class="message-body">
+      {{ favorite.login }}
+      {{ favorite.id }}
+    </div>
+  </article>
+  <div>s</div>
 </div>
 
-<article *ngFor="let favorite of favoritesArray" class="message is-warning">
-  <div class="message-body">
-    {{ favorite.login }}
-    {{ favorite.id }}
-  </div>
-</article>
