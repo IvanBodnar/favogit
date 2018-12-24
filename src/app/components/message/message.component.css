@@ -1,0 +1,27 @@
+
+.message {
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+  width: 250px;
+  height: 80px;
+  background-color: var(--base-green);
+  justify-items: center;
+  align-items: center;
+}
+
+.head {
+  justify-self: end;
+}
+
+.body {
+  align-self: start;
+}
+
+p {
+  padding: 5px;
+  color: white;
+}
+
+button {
+  margin: 3px;
+}
