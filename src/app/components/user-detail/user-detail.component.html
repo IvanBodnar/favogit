@@ -3,11 +3,11 @@
   <div class="message-body">
     <div>
       <div>Followers: {{ currentUser.followers }}</div>
-      <div> <a href="{{ currentUser.html_url }}" target="_blank">Perfil GitHub</a> </div>
+      <div> <a [href]="currentUser.html_url" target="_blank">Perfil GitHub</a> </div>
       <div>Full Name: {{ currentUser.name }}</div>
     </div>
     <div class="image-area">
-      <img src="{{ currentUser.avatar_url }}" alt="">
+      <img [src]="currentUser.avatar_url" alt="">
     </div>
   </div>
 </article>
