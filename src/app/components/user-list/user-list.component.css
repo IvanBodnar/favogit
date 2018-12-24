@@ -7,6 +7,12 @@
   grid-template-rows: repeat(3, 1fr);
 }
 
+.order-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 50px;
+}
+
 article {
   cursor: pointer;
 }

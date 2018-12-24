@@ -1,6 +1,20 @@
 
-<button (click)="onSort( 'asc' )">Ordenar ASC</button>
-<button (click)="onSort( 'desc' )">Ordenar DESC</button>
+<div *ngIf="users" class="order-buttons-container">
+
+  <a (click)="onSort( 'asc' )" class="button is-primary is-outlined">Ordenar</a>
+
+  <div class="field">
+    <div class="control">
+      <div class="select is-primary">
+        <select #selectElement>
+          <option>Ascendente</option>
+          <option>Descendente</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+</div>
 
 <div class="user-list-container">
   <article

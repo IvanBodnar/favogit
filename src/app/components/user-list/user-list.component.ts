@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import _ from 'lodash';
 
@@ -13,6 +13,7 @@ import {Order} from '../../models/order.enum';
 })
 export class UserListComponent implements OnInit {
   users: UserListModel[];
+  @ViewChild('selectElement') selectElement: ElementRef;
 
   constructor(
     private userService: UserService,
@@ -34,7 +35,13 @@ export class UserListComponent implements OnInit {
     this.router.navigate( [ '/user-detail' ] );
   }
 
-  onSort( order: Order ): void {
+  onSort(): void {
+    const selectedOrderValue = this.selectElement.nativeElement.value;
+    const order = selectedOrderValue.toLowerCase() === 'ascendente'
+                  ? Order.asc
+                  : selectedOrderValue.toLowerCase() === 'descendente'
+                  ? Order.desc
+                  : console.log('Orden no contemplado');
     this.users = _.orderBy(this.users, 'login', order);
   }
 
