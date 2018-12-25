@@ -1,20 +1,31 @@
 import { Injectable } from '@angular/core';
+import UserDetailModel from '../models/user-detail.model';
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavoriteService {
-  favorites = [];
+  favorites: UserDetailModel[] = [];
+  currentFavorite: UserDetailModel;
 
   constructor() { }
 
-  addToFavorites( favoriteUser: any ): void {
-    this.favorites.push( favoriteUser );
+  isFavorite( user: UserDetailModel ): Observable<boolean> {
+    const result = this.favorites.some(
+      userItem => userItem.id === user.id
+    );
+    return of( result );
   }
 
-  deleteFavorite( favoriteId: number ): void {
+  addToFavorites( favoriteUser: UserDetailModel ): void {
+    this.favorites.push( favoriteUser );
+    this.currentFavorite = favoriteUser;
+  }
+
+  deleteFavorite( favoriteUser: UserDetailModel ): void {
     this.favorites = this.favorites.filter(
-      element => element.id !== favoriteId
+      userItem => userItem.id !== favoriteUser.id
     );
   }
 }
