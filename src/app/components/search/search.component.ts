@@ -33,7 +33,9 @@ export class SearchComponent implements OnInit {
   // Llama a fetchUsers y navega a /users. La lista de usuarios
   // va a estar disponible en UserService para que la consuma UserListComponent
   onSubmit() {
-    this.userService.fetchUsers(this.searchForm.value.search);
+    const matchTerm = this.searchForm.value.search;
+    this.userService.fetchUsers( matchTerm );
+    this.userService.matchTerm = matchTerm;
 
     setTimeout(() => {
       this.userService.usersCount$.subscribe(

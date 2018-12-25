@@ -17,7 +17,9 @@ export class UserService {
   currentUser$ = this._userSubject.asObservable();
 
   usersCount$: Observable<number>;
+
   currentUserUrl: string;
+  matchTerm: string;
 
   constructor(
     private dataService: DataService
@@ -41,7 +43,8 @@ export class UserService {
                 item.id,
                 item.url,
                 item.html_url,
-                item.login,
+                item.login.toLowerCase(),
+                item.avatar_url,
                 item.text_matches
               )
             );
