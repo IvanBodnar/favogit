@@ -6,10 +6,10 @@
       <div>
         <div>Full Name: {{ currentUser.name }}</div>
         <div>Email: {{ currentUser.name }}</div>
-        <a [href]="currentUser.reposUrl" target="_blank">Repos: {{ currentUser.publicRepos }}</a><br>
-        <a [href]="currentUser.gistsUrl" target="_blank">Gists: {{ currentUser.publicGists }}</a><br>
-        <a [href]="currentUser.followersUrl" target="_blank">Followers: {{ currentUser.followers }}</a>
-        <div><a [href]="currentUser.htmlUrl" target="_blank">Perfil GitHub</a></div>
+        <div>Repos: {{ currentUser.publicRepos }}</div>
+        <div>Gists: {{ currentUser.publicGists }}</div>
+        <div>Followers: {{ currentUser.followers }}</div>
+        <a [href]="currentUser.htmlUrl" target="_blank">Perfil GitHub</a>
       </div>
       <div class="image-area">
         <img [src]="currentUser.avatarUrl" alt="">
