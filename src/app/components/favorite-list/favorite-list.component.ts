@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {FavoriteService} from '../../services/favorite.service';
+import UserDetailModel from '../../models/user-detail.model';
 
 @Component({
   selector: 'app-favorite-list',
@@ -18,8 +19,8 @@ export class FavoriteListComponent implements OnInit {
     this.favoritesArray = this.favoriteService.favorites;
   }
 
-  onDelete( favoriteId: number ): void {
-    this.favoriteService.deleteFavorite( favoriteId );
+  onDelete( favoriteUser: UserDetailModel ): void {
+    this.favoriteService.deleteFavorite( favoriteUser );
     this.favoritesArray = this.favoriteService.favorites;
   }
 
