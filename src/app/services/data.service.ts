@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {UsersResponseModel} from '../models/users-response.model';
 import {map} from 'rxjs/operators';
-import {environment} from '../../environments/environment';
+// import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class DataService {
   baseUrl = `https://api.github.com/`;
   headers = {
     'Accept': 'application/vnd.github.v3.text-match+json',
-    'Authorization': `token ${ environment.token }`
+    // 'Authorization': `token ${ environment.token }`
   };
 
   constructor(
