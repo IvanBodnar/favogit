@@ -6,6 +6,7 @@
 :root {
   --base-green: #00d1b2;
   --base-yellow: #ffdd57;
+  --base-blue: #0095EE;
 }
 
 html,
@@ -16,4 +17,9 @@ body {
 
 a {
   color: var(--base-green) !important;
+  text-decoration: none !important;
+}
+
+a:active {
+  color: var(--base-blue) !important;
 }
