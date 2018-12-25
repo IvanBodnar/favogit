@@ -4,11 +4,13 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { HighlightMatchPipe } from './pipes/highlight-match.pipe';
 
 @NgModule({
   declarations: [
     UserDetailComponent,
-    UserListComponent
+    UserListComponent,
+    HighlightMatchPipe
   ],
   imports: [
     CommonModule,
