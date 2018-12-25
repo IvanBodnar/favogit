@@ -3,6 +3,9 @@
 <div class="favorite-container">
   <div></div>
 
+  <h3 *ngIf="favoritesArray.length === 0" class="is-size-3">No Hay Favoritos</h3>
+  <h3 *ngIf="favoritesArray.length > 0" class="is-size-3">Favoritos</h3>
+
   <article *ngFor="let favorite of favoritesArray" class="message is-warning">
     <div class="message-header">
       <p>{{ favorite.login }}</p>
@@ -13,7 +16,7 @@
       ></button>
     </div>
     <div class="message-body">
-      {{ favorite.id }}
+      Nombre: {{ favorite.name }}
     </div>
   </article>
 

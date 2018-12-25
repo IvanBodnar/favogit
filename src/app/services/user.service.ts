@@ -53,8 +53,9 @@ export class UserService {
       )
       .subscribe(
         users => {
-          this._usersSubject.next(users);
-        }
+          this._usersSubject.next( users );
+        },
+        error => console.log( error )
       );
   }
 
@@ -66,9 +67,18 @@ export class UserService {
               return new UserDetailModel(
                 item.login,
                 item.id,
+                item.url,
                 item.avatar_url,
                 item.html_url,
-                item.public_repos
+                item.repos_url,
+                item.gists_url,
+                item.followers_url,
+                item.public_repos,
+                item.public_gists,
+                item.name,
+                item.email,
+                item.followers,
+                item.hireable
               );
             }
         )
@@ -77,7 +87,7 @@ export class UserService {
         userDetail => {
           this._userSubject.next( userDetail );
         },
-        error => console.log(error)
+        error => console.log( error )
       );
   }
 }

@@ -9,7 +9,7 @@ import UserDetailModel from '../../models/user-detail.model';
   styleUrls: ['./favorite-list.component.css']
 })
 export class FavoriteListComponent implements OnInit {
-  favoritesArray: any[];
+  favoritesArray: UserDetailModel[];
 
   constructor(
     public favoriteService: FavoriteService

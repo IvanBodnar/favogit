@@ -7,6 +7,12 @@
   grid-template-rows: repeat(3, 1fr);
 }
 
+.is-size-3 {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  justify-self: center;
+}
+
 .order-buttons-container {
   display: flex;
   justify-content: flex-end;
@@ -46,5 +52,13 @@ img {
     margin: 30px;
     display: flex;
     flex-direction: column;
+  }
+
+  .order-buttons-container {
+    justify-content: center;
+  }
+
+  h3 {
+    align-self: center;
   }
 }
