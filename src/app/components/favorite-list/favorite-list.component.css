@@ -9,6 +9,10 @@ article {
   align-items: center;
 }
 
+.is-size-2 {
+  margin-bottom: 20px;
+}
+
 @media (max-width: 500px) {
   article {
     min-width: 70%;
