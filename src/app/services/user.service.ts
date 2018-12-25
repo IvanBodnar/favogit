@@ -41,7 +41,8 @@ export class UserService {
                 item.id,
                 item.url,
                 item.html_url,
-                item.login,
+                item.login.toLowerCase(),
+                item.avatar_url,
                 item.text_matches
               )
             );
