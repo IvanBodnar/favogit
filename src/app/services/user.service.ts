@@ -4,6 +4,7 @@ import {BehaviorSubject, Observable, of} from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 
 import UserListModel from '../models/user-list.model';
+import UserDetailModel from '../models/user-detail.model';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +57,19 @@ export class UserService {
 
   fetchUserDetail( userUrl: string ): void {
     this.dataService.getUserDetail( userUrl )
+      .pipe(
+        map(
+          item => {
+              return new UserDetailModel(
+                item.login,
+                item.id,
+                item.avatar_url,
+                item.html_url,
+                item.public_repos
+              );
+            }
+        )
+      )
       .subscribe(
         userDetail => {
           this._userSubject.next( userDetail );
