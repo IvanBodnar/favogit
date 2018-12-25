@@ -47,4 +47,8 @@ img {
     display: flex;
     flex-direction: column;
   }
+
+  .order-buttons-container {
+    justify-content: center;
+  }
 }
