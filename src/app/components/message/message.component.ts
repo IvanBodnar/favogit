@@ -7,7 +7,7 @@ import {NavigationStart, Router} from '@angular/router';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
-  private _messageText: string;
+  _messageText: string;
   @Input()
   set messageText( message: string ) {
     this._messageText = message;
