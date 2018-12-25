@@ -19,14 +19,15 @@
 <div class="user-list-container">
   <article
     *ngFor="let user of users"
-    (click)="onDetail( user.apiUrl )"
     class="message is-warning"
   >
     <div class="message-header">
       <p>{{ user.login }}</p>
+      <img [src]="user.avatarUrl" alt="">
     </div>
     <div class="message-body">
-      {{ user.htmlUrl }}
+      <a [href]="user.htmlUrl">Perfil GitHub</a>
+      <a (click)="onDetail( user.apiUrl )">Ver Detalles</a>
     </div>
   </article>
 </div>

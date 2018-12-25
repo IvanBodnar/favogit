@@ -21,8 +21,19 @@
   background-color: var(--base-yellow);
 }
 
-article {
-  cursor: pointer;
+.message-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-body > a {
+  margin: 5px 0;
+}
+
+img {
+  height: 30px;
+  width: 30px;
+  border-radius: 30%;
 }
 
 @media (max-width: 500px) {
