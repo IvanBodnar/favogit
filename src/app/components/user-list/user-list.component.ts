@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {Router} from '@angular/router';
 import _ from 'lodash';
 
@@ -9,9 +9,11 @@ import {Order} from '../../models/order.enum';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  styleUrls: ['./user-list.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class UserListComponent implements OnInit {
+  matchTerm: string;
   users: UserListModel[];
   @ViewChild('selectElement') selectElement: ElementRef;
 
@@ -25,6 +27,7 @@ export class UserListComponent implements OnInit {
       .subscribe(
         ( users: UserListModel[] ) => {
           this.users = users;
+          this.matchTerm = this.userService.matchTerm;
         }
       );
   }
