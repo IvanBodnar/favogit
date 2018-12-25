@@ -33,8 +33,8 @@ export class SearchComponent implements OnInit {
   // Llama a fetchUsers y navega a /users. La lista de usuarios
   // va a estar disponible en UserService para que la consuma UserListComponent
   onSubmit() {
-    const error = this.searchForm.controls['search'].errors;
-    if (error) {
+    const err = this.searchForm.controls['search'].errors;
+    if (err) {
       this.message = 'Ingrese Término';
       return;
     }
@@ -48,7 +48,7 @@ export class SearchComponent implements OnInit {
         count =>  this.message = `Matches: ${ count.toLocaleString() }`,
         error => console.log(error)
       );
-    }, 1000);
+    }, 2000);
 
     this._clearFields();
     this.router.navigate( ['/users'] );
