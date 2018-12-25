@@ -5,6 +5,7 @@ export default class UserListModel {
     public apiUrl: string,
     public htmlUrl: string,
     public login: string,
+    public avatarUrl: string,
     public textMatches: any[]
   ) { }
 }
