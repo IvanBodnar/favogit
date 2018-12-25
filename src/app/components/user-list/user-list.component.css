@@ -36,6 +36,11 @@ img {
   border-radius: 30%;
 }
 
+.hl {
+  background: var(--base-green);
+  border-radius: 10%;
+}
+
 @media (max-width: 500px) {
   .user-list-container {
     margin: 30px;

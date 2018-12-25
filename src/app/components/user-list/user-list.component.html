@@ -22,7 +22,7 @@
     class="message is-warning"
   >
     <div class="message-header">
-      <p>{{ user.login }}</p>
+      <p [innerHTML]="user.login | highlightMatch:matchTerm"></p>
       <img [src]="user.avatarUrl" alt="">
     </div>
     <div class="message-body">
