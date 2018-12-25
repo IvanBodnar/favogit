@@ -1,13 +1,19 @@
 <nav class="navbar is-warning">
 
+  <div class="navbar-brand">
+    <div class="navbar-item">
+      FavoGit
+    </div>
+  </div>
+
   <div class="navbar-end">
     <div class="navbar-item">
       <div class="buttons">
         <a [routerLink]="[ '/favorites' ]" class="button is-light">
           <strong>Favoritos</strong>
         </a>
-        <a class="button is-light">
-          Buscar
+        <a [routerLink]="[ '/users' ]" class="button is-light">
+          Home
         </a>
       </div>
     </div>
