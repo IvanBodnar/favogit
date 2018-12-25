@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.searchForm = new FormGroup({
-        'search': new FormControl(null, [ Validators.required ])
+        'search': new FormControl('', [ Validators.required ])
     });
 
   }
@@ -33,6 +33,12 @@ export class SearchComponent implements OnInit {
   // Llama a fetchUsers y navega a /users. La lista de usuarios
   // va a estar disponible en UserService para que la consuma UserListComponent
   onSubmit() {
+    const error = this.searchForm.controls['search'].errors;
+    if (error) {
+      this.message = 'Ingrese Término';
+      return;
+    }
+
     const matchTerm = this.searchForm.value.search;
     this.userService.fetchUsers( matchTerm );
     this.userService.matchTerm = matchTerm;
