@@ -4,6 +4,7 @@ import {UserModule} from './user.module';
 import { FavoriteModule } from './favorite.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 import { AppComponent } from './app.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
@@ -25,7 +26,9 @@ import { MessageComponent } from './components/message/message.component';
     ReactiveFormsModule,
     FavoriteModule
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
