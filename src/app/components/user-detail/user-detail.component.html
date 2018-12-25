@@ -4,18 +4,23 @@
   <article *ngIf="currentUser" class="message is-success is-large">
     <div class="message-body">
       <div>
-        <div>Followers: {{ currentUser.followers }}</div>
-        <div> <a [href]="currentUser.html_url" target="_blank">Perfil GitHub</a> </div>
-        <div>Full Name: {{ currentUser.name }}</div>
+        <div>Repos: {{ currentUser.publicRepos }}</div>
+        <div> <a [href]="currentUser.htmlUrl" target="_blank">Perfil GitHub</a> </div>
+        <!--<div>Full Name: {{ currentUser.name }}</div>-->
       </div>
       <div class="image-area">
-        <img [src]="currentUser.avatar_url" alt="">
+        <img [src]="currentUser.avatarUrl" alt="">
       </div>
     </div>
   </article>
 
   <div *ngIf="currentUser" class="favorite-area">
-    <i (click)="onFavorite()" class="fas fa-star"></i>
+    <i
+      (click)="onFavorite()"
+      [ngClass]="{ 'is-favorite': addFavoriteClass }"
+      class="fas fa-star"
+    >
+    </i>
   </div>
 </div>
 
