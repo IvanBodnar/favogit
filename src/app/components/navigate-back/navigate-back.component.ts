@@ -9,7 +9,7 @@ import {NavigationEnd, Router} from '@angular/router';
 })
 export class NavigateBackComponent implements OnInit {
   currentLocation: string;
-  show: boolean;
+  show = false;
 
   constructor(
     private location: Location,
