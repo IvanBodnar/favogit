@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {SearchComponent} from './components/search/search.component';
 import { MessageComponent } from './components/message/message.component';
+import { NavigateBackComponent } from './components/navigate-back/navigate-back.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SearchComponent,
-    MessageComponent
+    MessageComponent,
+    NavigateBackComponent
   ],
   imports: [
     BrowserModule,

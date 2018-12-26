@@ -23,7 +23,6 @@ export class SearchComponent implements OnInit {
     this.searchForm = new FormGroup({
         'search': new FormControl('', [ Validators.required ])
     });
-
   }
 
   private _clearFields(): void {
