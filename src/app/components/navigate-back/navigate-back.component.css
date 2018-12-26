@@ -1,0 +1,7 @@
+
+i {
+  font-size: 38px;
+  color: var(--base-green);
+  cursor: pointer;
+  justify-self: flex-end;
+}
